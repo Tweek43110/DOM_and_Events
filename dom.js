@@ -47,3 +47,25 @@ paragraph2.textContent = "ME TOO!";
 special.appendChild(paragraph2);
 
 /* The rest of this document will cover events */
+//JS method 1, only allows one onclick element in DOM
+let btn = document.querySelector('#btn1');
+btn1.onclick = () => alert("Hello World");
+
+// JS method 2, allows multiple click events *OPTIMAL*
+let btn2 = document.querySelector('#btn2');
+btn2.addEventListener('click', () => {
+    alert("Hello World");
+});
+
+//Named functions can make reusable code
+function alertMessage() {
+    alert("Yay! You did it!");
+}
+
+// This would be th code without and other manipulation
+//btn3.addEventListener('click', alertMessage);
+
+// results in a log of events to the console
+btn3.addEventListener('click', function(e) {
+    console.log(e.target.style.background = 'blue');
+});
