@@ -69,3 +69,13 @@ function alertMessage() {
 btn3.addEventListener('click', function(e) {
     console.log(e.target.style.background = 'blue');
 });
+
+// Attaching event listeners to multiple elements, this selects all buttons
+const buttons = document.querySelectorAll('button');
+//This iterates through each button to add the next function
+buttons.forEach((button) => {
+    //This add \s a click event listener to each button and logs the id if clicked
+    button.addEventListener('click', (e) => {
+        console.log(button.id);
+    })
+})
